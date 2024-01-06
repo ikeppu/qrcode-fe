@@ -1,0 +1,43 @@
+<div class="">
+  <div class="card">
+    <p-table
+      styleClass="p-datatable-striped"
+      [value]="products"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [rows]="5"
+      [paginator]="true"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>{{ product.code }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.quantity }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<div class="mt-10 flex px-5 gap-3">
+  <button (click)="add()" class="bg-green-500 py-1.5 px-6 text-white rounded">
+    Add
+  </button>
+  <button class="bg-green-500 py-1.5 px-6 text-white rounded">Update</button>
+  <button
+    (click)="generateQrCode()"
+    class="bg-green-500 py-1.5 px-6 text-white rounded"
+  >
+    GenerateQr
+  </button>
+</div>
+
+<!-- Move this to separate window -->

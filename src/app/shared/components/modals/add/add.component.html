@@ -1,0 +1,34 @@
+<div [formGroup]="addInfoForm" class="">
+  <div class="flex flex-col justify-center items-center gap-4">
+    <input
+      type="text"
+      placeholder="Title"
+      class="border w-1/2 focus:border-b-cyan-500 focus:outline-none py-1.5 px-1"
+      formControlName="title"
+    />
+    <input
+      type="text"
+      placeholder="Subtitle"
+      class="border w-1/2 focus:border-b-cyan-500 focus:outline-none py-1.5 px-1"
+      formControlName="subtitle"
+    />
+    <textarea
+      type="text"
+      placeholder="Details"
+      class="border w-1/2 focus:border-b-cyan-500 focus:outline-none py-1.5 px-1"
+      formControlName="details"
+    ></textarea>
+  </div>
+  <div class="flex justify-between mt-10">
+    <button (click)="close()" class="bg-red-500 text-white py-2 px-6 rounded">
+      Cancel
+    </button>
+    <button
+      (click)="add()"
+      [disabled]="isLoading"
+      class="bg-cyan-500 text-white py-2 px-6 rounded disabled:opacity-50"
+    >
+      Add
+    </button>
+  </div>
+</div>
